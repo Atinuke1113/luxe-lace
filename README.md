@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # luxe-lace
 An ecommerce website
 #  Nuxt 3 eCommerce Task
@@ -36,3 +37,6 @@ npm install
 
  3. Run the Development Server
 npm run dev
+=======
+# Nuxt 3 Minimal Starter.
+>>>>>>> 843a8c3 (first commit)
