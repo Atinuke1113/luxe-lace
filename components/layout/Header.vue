@@ -27,15 +27,24 @@
           <button class="text-gray-600 hover:text-pink-600 transition-colors">
             <i class="fas fa-user"></i>
           </button>
-          <NuxtLink to="/cart" class="relative">
-  <i class="fas fa-shopping-bag text-gray-600 hover:text-pink-600"></i>
-  <span 
-    v-if="cartStore.itemCount" 
-    class="absolute -top-2 -right-2 bg-pink-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
-  >
-    {{ cartStore.itemCount }}
-  </span>
-</NuxtLink>
+           <router-link 
+          to="/cart" 
+          custom
+          v-slot="{ navigate }"
+        >
+          <div 
+            @click="navigate"
+            class="relative p-2 cursor-pointer group"
+          >
+            <i class="fas fa-shopping-bag text-xl text-gray-600 group-hover:text-pink-600 transition-colors"></i>
+            <span 
+              v-if="cartStore.itemCount > 0" 
+              class="absolute -top-1 -right-1 bg-pink-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full"
+            >
+              {{ cartStore.itemCount }}
+            </span>
+          </div>
+        </router-link>
           
         </div>
       </div>
@@ -56,7 +65,10 @@ const navItems = [
 ];
 
 import { useCartStore } from '@/stores/cartStore'
+import { useRouter } from 'vue-router'
+
 const cartStore = useCartStore()
+const router = useRouter()
 </script>
 
 <style scoped>

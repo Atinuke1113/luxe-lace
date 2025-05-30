@@ -46,6 +46,8 @@
 <script setup lang="ts">
 import { useCartStore } from '@/stores/cartStore'
 import { productService } from '@/services/productService'
+import CartItem from '@/components/cart/CartItem.vue'  
+import { useRouter } from 'vue-router'  
 
 const cartStore = useCartStore()
 const router = useRouter()
