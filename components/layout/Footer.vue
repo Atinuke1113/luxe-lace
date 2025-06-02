@@ -4,7 +4,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <h3 class="text-lg font-semibold text-gray-800 mb-3">Luxe&Lace</h3>
-          <p class="text-gray-600">Your one-stop destination for premium wears and beauty jewelries.</p>
+          <p class="text-gray-600">Your one-stop destination for premium wears and beautiful jewelries.</p>
         </div>
         <div>
           <h3 class="text-lg font-semibold text-gray-800 mb-3">Quick Links</h3>

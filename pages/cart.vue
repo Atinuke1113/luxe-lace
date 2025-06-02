@@ -66,13 +66,17 @@ const updateQuantity = (productId: number, quantity: number) => {
 
 const checkout = async () => {
   try {
-    cartStore.checkout()
-    
-    alert('Order placed successfully!')
+    if (cartStore.items.length === 0) {
+      alert('Your cart is empty')
+      return
+    }
 
-    router.push('/')
+    const order = cartStore.checkout()
+    if (order) {
+      router.push('/checkout-success')
+    }
   } catch (error) {
-    console.error('Checkout failed:', error)
+    console.error('Checkout error:', error)
     alert('Failed to place order. Please try again.')
   }
 }
